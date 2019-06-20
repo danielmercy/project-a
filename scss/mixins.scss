@@ -1,0 +1,115 @@
+@mixin radius {
+    border-radius: var(--radius);
+}
+
+@mixin flex {
+    display: flex;
+}
+
+@mixin inline-flex {
+    display: inline-flex;
+}
+
+@mixin middle {
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin center {
+    // justify-content: center;
+    align-items: center;
+}
+
+@mixin flex--row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex--column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin translate-middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin card {
+    padding: 30px;
+    box-sizing: border-box;
+    background: var(--white);
+    box-shadow: var(--nav-shadow);
+    @include radius();
+    @include flex--column();
+}
+
+@mixin text($size, $weight, $color) {
+    font-size: $size;
+    font-weight: $weight;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $color;
+}
+
+@mixin link {
+    padding: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--text-color);
+    font-size: .8em;
+    font-weight: 600;
+    transition: all 500ms ease-in-out;
+
+    &:hover {
+        color: var(--primary);
+        transition: all 500ms ease-in-out;
+    }
+}
+
+@mixin btn {
+    padding: 12px 15px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .78em;
+    font-weight: 600;
+    @include radius();
+}
+
+@mixin btn--outline {
+    background: transparent;
+    border: 1.3px solid var(--btn-color);
+    color: var(--btn-color);
+    text-shadow: 0px 0px 1px lighten($color: $btn-color, $amount: 20%);
+}
+
+@mixin btn--fill {
+    border: 1px solid var(--btn-color);
+    background: var(--btn-color);
+    color: var(--white);
+}
+
+@mixin btn--blank {
+    color: var(--white);
+    span {
+        display: inline-block;
+    }
+}
+
+@mixin object($width, $height, $background) {
+    width: $width;
+    height: $height;
+    background: $background
+}
+
+@mixin divide($width, $height, $color) {
+    width: $width;
+    height: $height;
+    background: $color;
+    display: block;
+}
